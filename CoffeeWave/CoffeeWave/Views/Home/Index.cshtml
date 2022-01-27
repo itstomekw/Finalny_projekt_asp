@@ -1,0 +1,16 @@
+﻿@model HomeViewModel
+
+
+<div>
+    <h2>Recommended products:</h2>
+    @foreach (var product in Model.RecommendedProducts)
+    {
+        <div>
+            <img src="@product.ImageUrl" alt="" style="width:300px; height:150px;"/>
+        </div>
+        <div>
+        <h3><a asp-controller="Product" asp-action="Details" asp-route-id="@product.Id">@product.Name</a></h3> 
+        <h3>@product.Price</h3>
+    </div>
+    }
+</div>
